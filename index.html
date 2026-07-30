@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resgate seus Pontos Livelo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <span class="brand__mark">L</span>
+        <span class="brand__name">livelo<span>+</span></span>
+      </div>
+
+      <div class="points-badge" id="pointsBadge">
+        <span class="points-badge__label">Meus pontos</span>
+        <span class="points-badge__value" id="pointsValue">0</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <h1>Transforme seus pontos em experiências</h1>
+        <p>Troque seus pontos Livelo por passagens, produtos, vale-presentes e muito mais.</p>
+        <a href="#catalogo" class="btn btn--primary">Ver ofertas de resgate</a>
+      </div>
+      <div class="hero__card">
+        <p class="hero__card-label">Saldo disponível</p>
+        <p class="hero__card-value"><span id="pointsValueHero">0</span> pts</p>
+        <p class="hero__card-sub">Válidos até dez/2027</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <section class="filters" id="catalogo">
+      <h2>Catálogo de resgate</h2>
+      <div class="filters__row">
+        <div class="filters__tabs" id="categoryTabs">
+          <button class="tab is-active" data-category="todos">Todos</button>
+          <button class="tab" data-category="passagens">Passagens e Milhas</button>
+          <button class="tab" data-category="produtos">Produtos</button>
+          <button class="tab" data-category="vale">Vale-presente</button>
+          <button class="tab" data-category="doacao">Doação</button>
+        </div>
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Buscar parceiro ou item..."
+        />
+      </div>
+    </section>
+
+    <section class="grid" id="rewardsGrid"></section>
+
+    <section class="history" id="history">
+      <h2>Histórico de resgates</h2>
+      <div id="historyList" class="history__list">
+        <p class="history__empty" id="historyEmpty">Você ainda não fez nenhum resgate.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Site de demonstração — simulação de resgate de pontos, sem integração com sistemas reais da Livelo.</p>
+    </div>
+  </footer>
+
+  <!-- Modal de resgate -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Fechar">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
